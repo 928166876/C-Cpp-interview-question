@@ -1,0 +1,16 @@
+5.typedef在C语言中频繁用以声明一个已经存在的数据类型的同义字。
+也可以用预处理器做类似的事。例如，思考一下下面的例子:
+#define dPS struct s*
+typedef struct s* tPS
+以上两种情况的意冬都是要定义dPS 和tPS 作为一个指向结构s指针。哪种方法更好呢?
+
+1)
+dPS p1; --> struct s* p1;
+tPS p2; --> struct s* p2;
+
+2)
+dPS p1, p2; --> struct s* p1, p2;  //错误 p1是指针，p2是结构
+tPS p1, p2; --> struct s* p1, *p2;  //正确 p1是指针，p2是指针
+
+综上所述，typedef更好，因为它可以避免一些错误。尤其是在定义多个变量时，typedef更加安全。
+

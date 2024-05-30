@@ -1,0 +1,12 @@
+下面所示代码运行的结果是什么？
+
+#include <stdio.h>
+
+int main(void){
+    unsigned int a = 6;
+    int b = -20;
+
+    (a + b > 6) ? puts("> 6") : puts("<= 6");
+
+    return 0;
+}

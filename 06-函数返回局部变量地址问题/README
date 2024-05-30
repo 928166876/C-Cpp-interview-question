@@ -1,0 +1,16 @@
+6.下列代码是否有问题，是什么，那该如何修改。
+如果有问题，那么编译运行后的结果是什么，并说明问题的原因。
+
+#include <stdio.h>
+
+char *get_str(void);
+int main(void){
+    char *str = get_str();
+    printf("%s\n", str);
+    return 0;
+}
+
+char *get_str(void){
+    char str[] = "hello world";
+    return str;
+}
