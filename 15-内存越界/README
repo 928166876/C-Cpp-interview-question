@@ -1,0 +1,12 @@
+15.阅读下面代码，看这段代码是否有问题，如果有问题请指出问题。
+char *p1= "ABCABC"
+char *p2=(char *)malloc(strlen(p1));
+strcpy(p2, p1);
+
+
+1) strlen: 不含'\0', --> strlen(p1) == 6
+2) strcpy:包含'\0'为零一起拷贝的
+
+char *p1= "ABCABC"
+char *p2=(char *)malloc(strlen(p1) + 1);
+strcpy(p2, p1);
