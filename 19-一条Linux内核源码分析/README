@@ -1,0 +1,10 @@
+19.在Linux内核代码(版本2.6.22)中有如下定义:
+#define offsetof(TYPE, MEMBER)((size t)&((TYPE *)0)->MEMBER)
+请尝试解释下上面这行语句的含义。
+
+
+1.(TYPE *)0: 将0强制类型转换为TPYE类型的指针，p=(TYPE*)0
+2.((TYPE*)0)->MEMBER --->> p->MEMBER--->访问MEMBER成员变量
+3.&((TYPE *)0)->MEMBER:取出MEMBER成员变量的地址
+4.(size t)&((TYPE *)0)->MEMBER:size_t相当于类型转换，将MEMBER成员变量的地址传换为size_t类型的数据，size_t==int
+总结:该宏的作用就是求出MEMBER成员变量在TYPE中的偏移量

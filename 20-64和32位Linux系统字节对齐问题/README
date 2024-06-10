@@ -1,0 +1,26 @@
+20.查看如下代码，写出程序运行的结果:
+#include <stdio.h>
+
+#define offsetof(TYPE, MEMBER) ((size_t) &((TYPE *)0)->MEMBER) 
+
+typedef struct s{
+
+    union{
+        int a;
+        char str[10];
+    };
+    struct s *next;
+}S;
+
+int main(){
+
+    printf("%d\n", offsetof(S, next));
+    return 0; 
+}
+
+
+/*
+解释：
+offsetof(TYPE, MEMBER)宏的作用是计算结构体中某个成员的偏移量，它的实现原理是利用C语言的特性，即结构体中第一个成员的地址就是结构体的地址，所以可以通过0地址来计算成员的偏移量。
+(TYPE *)0表示将0地址强制转换为TYPE类型的指针，然后取出其中的MEMBER成员的地址，再将这个地址转换为size_t类型，就得到了这个成员在结构体中的偏移量。
+*/
