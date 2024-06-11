@@ -1,0 +1,16 @@
+30.请说明下面代码的运行结果:
+#include <stdio.h>
+
+int main(void){
+    int i;
+    i = 10;
+    printf("%d\n", i);
+    printf("%ld\n", sizeof(i++));
+    printf("%d\n", i);
+    return 0;
+}
+
+答案：10 4 10
+
+1)sizeof不是函数，sizeof是运算符
+2)sizeof不会计算里面表达式的值，只判断表达式结果是什么类型就可以

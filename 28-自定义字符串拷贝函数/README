@@ -1,0 +1,31 @@
+28.仿照字符串库函数strcpy,自己编写一字符串拷贝函数，
+不允许使用C库函数，要求两个参数，第一个参数是要拷贝的目的地址，
+第二个参数是拷贝字符串的来源。
+
+char *my_strcpy(char *dest, const char *src)
+{
+    char *ret = dest;
+    while (*src != '\0')
+    {
+        *dest = *src;
+        dest++;
+        src++;
+    }
+    *dest = '\0';
+    return ret;
+}
+
+char *my_strcpy(char *dest, const char *src){
+    char *pt = dest;
+    if(dest == NULL || src == NULL){
+        return NULL;
+    }
+    if(dest == src){
+        return dest;
+    }
+    while(*dest++ = *src++){  //这里是赋值，while循环的条件是赋值表达式，赋值表达式的值是左边的值
+        ;
+    }
+    return pt;
+}
+

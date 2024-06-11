@@ -1,0 +1,23 @@
+27.有一名为Student的类，该类中有两个[]运算符重载函数的声明,如下所示:
+double & operator[](int i);
+double operator[](int i) const;
+这两个运算发重载函数的定义如下所示:
+double & Student::operator[](int i)
+{
+    return scores[i];
+}
+
+double Student::operator[](int i) const
+{
+    return scores[i];
+}
+
+请问这两个函数之前有何区别，为什么定义的功能都是一样的，都返回的是数组中指定下
+标的元素应如何理解和使用?
+
+答：这两个函数之间的区别在于const关键字，第一个函数是非常量成员函数，第二个函数是常量成员函数。
+第一个函数返回的是数组中指定下标的元素的引用，可以通过返回的引用修改数组中指定下标的元素的值， 可以作为左值使用。
+第二个函数返回的是数组中指定下标的元素的值，不能通过返回的值修改数组中指定下标的元素的值。  可以作为右值使用。
+
+double a = scores[0];--> double a = Student::operator[](0) const;   double operator[](int i) const;
+scores[0] = 10;      --> Student::operator[](0) = 10;               double & operator[](int i);
