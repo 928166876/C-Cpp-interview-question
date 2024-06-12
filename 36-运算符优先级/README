@@ -1,0 +1,16 @@
+36.下列程序输出结果是什么?
+#include <iostream>
+
+using namespace std;
+
+void max_out(int a, int b){
+    cout << (a > b) ? a : b;
+}
+
+int main(void){
+    int i = 10, j = 20;
+    cout << "The larger of " << i << " and " << j << "is";
+    max_out(i, j);
+    cout << endl;
+    return 0;
+}

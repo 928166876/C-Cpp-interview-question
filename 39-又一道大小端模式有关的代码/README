@@ -1,0 +1,18 @@
+39.阅读如下代码后，以下说法正确的是!
+#include <stdio.h>
+
+int main(void){
+    char aChar;
+    int aInt;
+
+    aInt = aChar = -120;
+    printf("%d\n", aInt);
+    return 0;
+}
+
+A:一定输出-120
+B:一定不能输出-120
+C:可能输出-120
+D:输出%d
+
+答案：C

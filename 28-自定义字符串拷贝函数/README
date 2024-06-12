@@ -2,18 +2,6 @@
 不允许使用C库函数，要求两个参数，第一个参数是要拷贝的目的地址，
 第二个参数是拷贝字符串的来源。
 
-char *my_strcpy(char *dest, const char *src)
-{
-    char *ret = dest;
-    while (*src != '\0')
-    {
-        *dest = *src;
-        dest++;
-        src++;
-    }
-    *dest = '\0';
-    return ret;
-}
 
 char *my_strcpy(char *dest, const char *src){
     char *pt = dest;

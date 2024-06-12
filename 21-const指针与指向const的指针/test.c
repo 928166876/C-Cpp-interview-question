@@ -15,9 +15,9 @@ int main(void){
     // pt = &c;    //可以指向其他变量
     // *pt = 100;  //不能修改指向的值
 
-    int * const pt = &a;
-    *pt = 100;  //可以修改指向的值
-    pt = &c;    //不能指向其他变量
+    // int * const pt = &a;
+    // *pt = 100;  //可以修改指向的值
+    // pt = &c;    //不能指向其他变量
 
     printf("a = %d\n", a);
     printf("pt = %d\n", *pt);

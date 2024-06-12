@@ -1,0 +1,19 @@
+32.下面的函数有什么错误:
+int square(volatile int *pt){
+    return (*pt) * (*pt);
+}
+
+int square(volatile int *pt){
+    int a = *pt;
+    int b = *pt;    //这里可能会被改变
+    return a * b;
+}
+
+正确的写法：
+int square(volatile int *pt){
+    int a = *pt;
+    return a * a;
+}
+
+答：volatile关键字告诉编译器不要优化这个变量，这样可能会在程序的其他地方被改变。
+在不加volatile关键字的情况下，编译器可能会认为*pt的值是不变的，所以会直接返回(*pt) * (*pt)的值。

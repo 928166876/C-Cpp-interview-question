@@ -1,0 +1,17 @@
+23.下面这段代码的输出结果为:
+#include <stdio.h>
+
+void change(int *a, int &b, int c){
+    c = *a;
+    b = 30;
+    *a = 20;
+}
+
+int main(){
+
+    int a = 10, b = 20, c = 30;
+    change();
+    printf("%d %d %d\n", a, b, c);
+
+    return 0;
+}
