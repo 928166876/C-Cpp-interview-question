@@ -1,0 +1,28 @@
+一个函数如下所示，简单分析下这个函数并指出这个函数的功能。
+
+void call_each(void (**a)(void), int size){
+    int n = size;
+    while(--n >= 0){
+        void (*p)(void) = *a++;
+        if(p){
+            (*p)();
+        }
+    }
+}
+
+1) **a
+int main(int argc, char *argv[])
+int main(int argc, char **argv[])
+
+**a == *a[] --> a是数组，数组中每个元素的类型是void (*) (void).
+可以看出a是数组，是函数指针数组，数组中每个元素是函数指针，函数指针指向的函数的返回值是void，参数是void。
+
+2) void (*p)(void) = *a++;
+*a++ -->  p = *a; a++;  
+
+3) (*p)()
+(*p)() -->  p()  调用函数指针p指向的函数
+
+总结：
+    该函数功能是调用一个函数指针数组中的每个函数指针指向的函数。
+

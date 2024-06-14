@@ -1,0 +1,18 @@
+41.如果从数组x复制50个字节到数组y，最简单的方式是什么?
+
+```c
+y = x //错误 x和y都是数组名，y相当于常量指针（指向地址不可变），不能赋值
+
+
+for (int i = 0; i < 50; i++)
+{
+    y[i] = x[i];    //错误，题目说的是50个字节，不是50个元素如果char x[50],y[50]这样写是对的
+                    //但是 int x[50],y[50]这样写就是错的 一个int占4个字节
+}
+
+
+#include <string.h>
+
+void *memcpy(void *dest, const void *src, size_t n);
+
+memcpy(y, x, 50);   //正确
