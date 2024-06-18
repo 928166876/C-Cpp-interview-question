@@ -1,0 +1,13 @@
+52.假如有如下C++函数:
+void bar(string &s);
+为什么下面的调用是错误的?
+bar("Hello world");
+如果想正确调用，该如何实现?
+
+"hello world" 传递给 string &s 将字符串传递给 string类型的引用
+hello world 是右值，编译器会创建临时变量 const string类型的对象
+
+将const string 类型的对象传递给string &s的非const引用会报错
+因为该引用可能修改原始const 对象的值。所以报错。
+
+修改：bar(const string &s)
