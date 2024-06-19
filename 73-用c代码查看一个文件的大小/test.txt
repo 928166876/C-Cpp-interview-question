@@ -1,0 +1,6 @@
+test.c: In function ‘void func(int*, int)’:
+test.c:15:49: warning: ‘sizeof’ on array function parameter ‘array’ will return size of ‘int*’ [-Wsizeof-array-argument]
+     printf("size of array = %ld\n", sizeof(array)); //输出8
+                                                 ^
+test.c:14:21: note: declared here
+ void func(int array[], int n){

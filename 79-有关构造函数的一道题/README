@@ -1,0 +1,32 @@
+79.有如下程序:
+
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+
+class Name{
+    char name[20];
+public:
+    Name(){
+        strcpy(name, "");
+        cout << '?';
+    }
+    Name(const char *s){
+        strcpy(name, s);
+        cout << '?';
+    }
+};
+
+int main(void){
+    Name names[3] = {Name("Rick"), Name("Maggie")};     //创建三个对象，会调用三次构造函数打印三个问号
+    return 0;
+}
+
+运行程序后的输出？的个数是( )。
+A. 1
+B. 2
+C. 0
+D. 3
+
+答案：D

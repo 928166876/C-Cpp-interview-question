@@ -1,0 +1,36 @@
+76.有如下程序：
+class BASE{
+    char c;
+    public:
+        BASE(char n):c(n){      //1.类成员初始化列表的方法
+
+        }
+
+        virtual ~BASE(){    //2.基类里要有一个虚析构函数
+            cout << c;
+        }
+};
+
+class DERIVED:public BASE{
+    char c;
+    public:
+        DERIVED(char n):BASE(n+1),c(n){   //3.派生类构造函数可以使用初始化器列表机制将值传递给基类构造函数。
+
+        }
+
+        ~DERIVED(){
+            cout << c;
+        }
+};
+
+int main(){
+    DERIVED('X');   //4.创建一个匿名的DERIVED对象   //5.先调用基类的构造函数，再调用派生类的构造函数
+    return 0;
+}                   
+请问程序的输出是什么？
+A. Y
+B. XY
+C. X
+D. YX
+
+答案：B             //先调用基类的构造函数，再调用派生类的构造函数，析构函数的调用顺序与构造函数的调用顺序相反。

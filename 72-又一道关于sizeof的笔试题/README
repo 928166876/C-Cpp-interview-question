@@ -1,0 +1,13 @@
+72.假设在64位的操作系统下，一个int类型占用4个字节，则:
+1)
+int arr[10]={0,1,2,3,4,5,6,7,8, 9};
+int *pt = arr;
+那么:
+sizeof(arr)是多少?  ---> 40 整个数组的大小
+sizeof(pt)是多少?   ---> 8  指针的大小
+
+2)
+void func(int array[], int n){
+    printf("size of array = %ld\n", sizeof(array)); //输出8
+}
+数组在传参时，会退化为指针，所以sizeof(array)输出的是指针的大小

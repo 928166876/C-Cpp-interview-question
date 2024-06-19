@@ -1,0 +1,24 @@
+71.指出下面代码是否有问题?
+void test(char *str1){
+    char string[10];
+    if(strlen(str1) <= 10){
+        strcpy(string, str1);
+    }
+}
+
+str1="0123456789"str1一共占11个字节，但是strlen(str1)结果是10
+
+strlen() 计算字符串的长度是不包括字符串结束的标志'\0'
+strcpy()在进行字符串拷贝时，遇到\0结束
+0123456789\0
+
+string[0 ~ 9] = 0123456789
+printf("%s", string)  //可能会输出乱码直到遇到\0结束
+
+正确代码：
+void test(char *str1){
+    char string[10];
+    if(strlen(str1) < 10){
+        strcpy(string, str1);
+    }
+}
