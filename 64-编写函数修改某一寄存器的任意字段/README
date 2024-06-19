@@ -1,0 +1,4 @@
+64.请定义一个函数，可以修改任意字段值
+name    bit7    bit6    bit5    bit4    bit3    bit2    bit1    bit0
+默认值      1       0       0       1       0       1       1       1
+字段    |   Mode    |         Config        |Enable |   Select      |     

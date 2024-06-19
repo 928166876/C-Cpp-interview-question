@@ -1,0 +1,18 @@
+60.内存分配有关的一道题，查看下面代码，看有无问题，如果有问题如何修改
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+void GetMemory(char *p){
+    p = (char *)malloc(100);
+}
+
+int main(void){
+    char *str = NULL;
+    GetMemory(str);
+    strcpy(str, "hello world");
+    printf("%s\n", str);
+
+    return 0;
+}

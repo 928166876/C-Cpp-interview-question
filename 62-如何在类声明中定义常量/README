@@ -1,0 +1,19 @@
+62.这个类声明正确吗？为什么？
+class A{
+    const int size = 10;
+}
+
+//不正确，因为size是一个常量,类在声明并不会开辟内存并将成员初始化化。
+//正确的声明应该是：
+class A{
+
+    //1
+    enum{size = 10};
+
+    //2
+    static const int size = 10;
+
+    //3
+    public:
+        A(const int size = 10){}
+}

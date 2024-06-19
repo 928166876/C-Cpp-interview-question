@@ -1,0 +1,16 @@
+63.如下代码运行结果是什么？
+#include <iostream>
+
+using namespace std;
+
+void max_out(int val1, int val2){
+    cout << (val1 > val2) ? val1 : val2;
+}
+
+int main(void){
+
+    int x = 10, y = 20;
+    cout << "The larger of " << x << " and " << y << "is ";
+    max_out(x, y);
+    cout << endl;
+}
